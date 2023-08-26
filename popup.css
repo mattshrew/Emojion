@@ -17,7 +17,57 @@ body {
     width: 90%;
     padding: 0 5%;
 }
-
+.smiley {
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: yellow;
+}
+.eye1{
+    top: 40px;
+    left: 40px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background: black;
+}
+.eye2{
+    top: 40px;
+    right: 40px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background: black;
+}
+.mouth {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    border-radius: 50%;
+    background: black;
+}
+.mouthholder {
+    top: 80px;
+    left: 65px;
+    height: 60px;
+    width: 30px;
+    position: absolute;
+    overflow: hidden;
+    rotate: 90deg;
+    transform: rotateY(90deg);
+}
+.djkhaled {
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    top: 110px;
+    background: black;
+    left: 50px;
+}
 #upload-box {
     border: 2px dashed #ccc;
     padding: 20px;
