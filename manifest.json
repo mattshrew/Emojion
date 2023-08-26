@@ -3,9 +3,11 @@
     "name": "Emojion",
     "description": "idk",
     "version": "1.0",
+    "icons": {"288": "ɉ128.png"},
     "permissions": ["activeTab", "storage"],
     "action": {
         "default_title": "Emojion",
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": "ɉ128.png"
     }
 }
