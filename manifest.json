@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Emojion",
+    "description": "idk",
+    "version": "1.0",
+    "permissions": ["activeTab", "storage"],
+    "action": {
+        "default_title": "Emojion",
+        "default_popup": "popup.html"
+    }
+}

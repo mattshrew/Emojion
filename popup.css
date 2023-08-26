@@ -1,0 +1,15 @@
+body {
+    width: 200px;
+    padding: 10px;
+}
+
+#upload-box {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#upload-box input {
+    display: none;
+}
