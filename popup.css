@@ -1,6 +1,21 @@
 body {
+    margin: 0;
+    padding: 0;
     width: 200px;
-    padding: 10px;
+    height: 400px;
+    align-items: center;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+    padding: 0 5%;
+}
+.logo {
+    width: 90%;
+    padding: 0 5%;
 }
 
 #upload-box {
