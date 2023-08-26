@@ -41,27 +41,47 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
+var tex;
+var senti;
+var conf;
+var startt;
+var endd;
 async function showTranscript(transcript) {
-    console.log("display transcript");
-    if (sentiment_result.text == 'NEUTRAL'){
+    console.log("chingchong");
+    for (let sentiment_result of transcript.sentiment_analysis_results) {
+        tex = sentiment_result.text;
+        senti = sentiment_result.sentiment;
+        conf = sentiment_result.confidence;
+        startt = sentiment_result.start;
+        endd = sentiment_result.end;
+    }
+    console.log(tex);
+    console.log(senti);
+    console.log(conf);
+    console.log(startt);
+    console.log(endd);
+    if (senti == 'NEUTRAL'){
         emotion = 0;
-    } else if (sentiment_result.text == 'POSITIVE'){
+    } else if (senti == 'POSITIVE'){
         emotion = 1;
-    } else if (sentiment_result.text == 'NEGATIVE'){
+    } else if (senti == 'NEGATIVE'){
         emotion = -1;
     }
+    console.log(emotion);
     if (emotion != sentiment){
         if (emotion > sentiment){
             smile1();
+            console.log("bing");
         } else if (emotion < sentiment){
             smile2();
+            console.log("bong");
+            console.log(sentiment);
         }
     }
     if (emotion==0&&sentiment==0){
-        mouth2.style.display = 'none';
-    } else {
         mouth2.style.display = 'block';
+    } else {
+        mouth2.style.display = 'none';
     }
 }
 function smile1() {
@@ -82,6 +102,7 @@ function smile1() {
 function smile2() {
     var id2 = null;
     var rotate = 90+(sentiment*90);
+    console.log(rotate);
     clearInterval(id2);
     id2 = setInterval(move2, 5);
     function move2() {
@@ -90,7 +111,8 @@ function smile2() {
             sentiment = emotion;
         } else {
             rotate-=0.5;
-            mouth2.style.transform = 'rotateY('+rotate+'deg)';
+            console.log(rotate);
+            mouth1.style.transform = 'rotateY('+rotate+'deg)';
         }
     }
 }
