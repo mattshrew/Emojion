@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const file = fileInput.files[0];
         if (file) {
             console.log('Uploaded file:', file.name);
-            await main(file);
+            const transcript = await main(file);
+            await showTranscript(transcript);
         }
     });
   
@@ -31,8 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const file = e.dataTransfer.files[0];
         if (file) {
             console.log('Dropped file:', file.name);
-            await main(file);
+            const transcript = await main(file);
+            await showTranscript(transcript);
         }
     });
 });
 
+async function showTranscript(transcript) {
+    console.log("display transcript");
+}

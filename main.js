@@ -115,6 +115,7 @@ export async function main(file) {
     const audioBuffer = await readFileAsArrayBuffer(file);
     const transcript = await transcribe(file, audioBuffer);
     await printTranscript(transcript);
+    return transcript;
 }
 
 export default main;
