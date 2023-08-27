@@ -51,8 +51,6 @@ const wordArray = [];
 const startArray = [];
 const endArray = [];
 async function showTranscript(transcript) {
-    console.log("chingchong");
-    
     for (let sentiment_result of transcript.sentiment_analysis_results) {
         tex = sentiment_result.text;
         senti = sentiment_result.sentiment;
@@ -66,12 +64,6 @@ async function showTranscript(transcript) {
         endArray.push(word_data.end);
     }
     runnotate();
-    console.log(startArray[0]);
-    console.log(tex);
-    console.log(senti);
-    console.log(conf);
-    console.log(startt);
-    console.log(endd);
     if (senti == 'NEUTRAL'){
         emotion = 0;
     } else if (senti == 'POSITIVE'){
@@ -79,11 +71,9 @@ async function showTranscript(transcript) {
     } else if (senti == 'NEGATIVE'){
         emotion = -1;
     }
-    console.log(emotion);
     if (emotion != sentiment){
         if (emotion > sentiment){
             smile1();
-            console.log("bing");
         } else if (emotion < sentiment){
             smile2();
         }
@@ -112,7 +102,6 @@ function smile1() {
 function smile2() {
     var id2 = null;
     var rotate = 90+(sentiment*90);
-    console.log(rotate);
     clearInterval(id2);
     id2 = setInterval(move2, 5);
     function move2() {
@@ -132,10 +121,8 @@ function runnotate(){
         if (counter>=startArray[indexWord]){
             printer=printer+wordArray[indexWord]+' ';
             indexWord+=1;
-            console.log("chiecken");
         }
         document.getElementById("p1").innerHTML = printer;
-        console.log(counter);
         counter+=10;
         setTimeout(runnotate, 10);
     }
