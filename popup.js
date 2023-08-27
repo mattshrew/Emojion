@@ -151,7 +151,9 @@ var indexSent = 0;
 function runnotate1(){
     if (counter1<=enddArray[enddArray.length-1]){
         if (counter1>=starttArray[indexSent]){
-            printer = '';
+            if (indexSent!=0) {
+                printer = '';
+            }
             if (sentiArray[indexSent] == 'NEUTRAL'){
                 emotion = 0;
             } else if (sentiArray[indexSent] == 'POSITIVE'){
