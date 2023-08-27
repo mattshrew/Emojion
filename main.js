@@ -1,4 +1,3 @@
-import { main } from "./main.js";
 var emotion = 0;
 var sentiment = 0;
 var mouth1 = document.getElementById("mouth");

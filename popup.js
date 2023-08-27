@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-input');
   
     uploadBox.addEventListener('click', function () {
+        toggleContent();
         fileInput.click();
     });
   
     fileInput.addEventListener('change', async function () {
         const file = fileInput.files[0];
         if (file) {
-            dropDown();
+            toggleContent();
             console.log('Uploaded file:', file.name);
             const transcript = await main(file);
             await showTranscript(transcript);
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         uploadBox.classList.remove('dragover');
         const file = e.dataTransfer.files[0];
         if (file) {
-            dropDown();
+            toggleContent();
             console.log('Dropped file:', file.name);
             const transcript = await main(file);
             await showTranscript(transcript);
@@ -70,38 +71,13 @@ async function showTranscript(transcript) {
     runnotate();
     runnotate1();
 }
-function dropDown() {
-    var id = null;
-    var top = 0;
-    clearInterval(id);
-    id = setInterval(dropper, 10);
-    function dropper() {
-        console.log("matthew needs bing chilling");
-        if (top >= 219) {
-            clearInterval(id);
-        } else {
-            top+=5;
-            body.style.height = top+100+'px';
-            content.style.height = top+'px';
-        }
-    }
+
+function toggleContent() {
+    console.log("t");
+    content.classList.toggle("active");
 }
-function dropUp() {
-    var id1 = null;
-    var top1 = 220;
-    clearInterval(id1);
-    id1 = setInterval(dropper1, 10);
-    function dropper1() {
-        console.log("matthew needs mor bing chilling");
-        if (top1 <= 0) {
-            clearInterval(id1);
-        } else {
-            top1-=5;
-            body.style.height = top1+100+'px';
-            content.style.height = top1+'px';
-        }
-    }
-}
+
+
 function smile1() {
     var id1 = null;
     var rotate = 90+(sentiment*90);
@@ -145,7 +121,7 @@ function runnotate(){
         setTimeout(runnotate, 10);
     } else {
         console.log("bingchilling");
-        setTimeout(dropUp, 5000);
+        setTimeout(toggleContent, 2000);
     }
 }
 var counter1 = 0;

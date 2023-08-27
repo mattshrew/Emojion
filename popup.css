@@ -1,18 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     width: 400px;
-    height: 100px;
+    height: auto;
     align-items: center;
 }
-.header {
+
+.heading {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%;
+    justify-content: space-evenly;
     height: 100px;
-    padding: 0 5%;
 }
+
+.header {
+    width: 50%;
+    height: 100px;
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+}
+
+
+#upload-box {
+    display: flex;
+    align-items: center;
+    border: 2px dashed #ccc;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    height: 75px;
+    width: 35%;
+}
+
+#upload-box p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#upload-box input {
+    display: none;
+}
+
 .content {
     position: absolute;
     height: 0px;
@@ -20,9 +55,11 @@ body {
     width: 100%;
     overflow: hidden;
 }
-.logo {
-    width: 50%;
+
+.content.active {
+    height: 320px;
 }
+
 .smiley {
     top: 50%;
     transform: translateY(-50%);
@@ -76,24 +113,10 @@ body {
     background: black;
     left: 37.5px;
 }
-#upload-box {
-    position: absolute;
-    top: 0;
-    left: 54%;
-    border: 2px dashed #ccc;
-    padding: 28px 20px;
-    text-align: center;
-    cursor: pointer;
-    height: 40px;
-    width: 35%;
-}
 #p1{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: medium;
     left: 150px;
-}
-#upload-box input {
-    display: none;
 }
