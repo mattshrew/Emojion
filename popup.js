@@ -3,6 +3,7 @@ var emotion = 0;
 var sentiment = 0;
 var mouth1 = document.getElementById("mouth");
 var mouth2 = document.getElementById("othermouth");
+var printer = "";
 
 document.addEventListener('DOMContentLoaded', function () {
     const uploadBox = document.getElementById('upload-box');
@@ -46,8 +47,12 @@ var senti;
 var conf;
 var startt;
 var endd;
+const wordArray = [];
+const startArray = [];
+const endArray = [];
 async function showTranscript(transcript) {
     console.log("chingchong");
+    
     for (let sentiment_result of transcript.sentiment_analysis_results) {
         tex = sentiment_result.text;
         senti = sentiment_result.sentiment;
@@ -55,6 +60,13 @@ async function showTranscript(transcript) {
         startt = sentiment_result.start;
         endd = sentiment_result.end;
     }
+    for (let word_data of transcript.words) {
+        wordArray.push(word_data.text);
+        startArray.push(word_data.start);
+        endArray.push(word_data.end);
+    }
+    runnotate();
+    console.log(startArray[0]);
     console.log(tex);
     console.log(senti);
     console.log(conf);
@@ -74,8 +86,6 @@ async function showTranscript(transcript) {
             console.log("bing");
         } else if (emotion < sentiment){
             smile2();
-            console.log("bong");
-            console.log(sentiment);
         }
     }
     if (emotion==0&&sentiment==0){
@@ -111,8 +121,22 @@ function smile2() {
             sentiment = emotion;
         } else {
             rotate-=0.5;
-            console.log(rotate);
             mouth1.style.transform = 'rotateY('+rotate+'deg)';
         }
+    }
+}
+var counter = 0;
+var indexWord = 0;
+function runnotate(){
+    if (counter<=endd){
+        if (counter>=startArray[indexWord]){
+            printer=printer+wordArray[indexWord]+' ';
+            indexWord+=1;
+            console.log("chiecken");
+        }
+        document.getElementById("p1").innerHTML = printer;
+        console.log(counter);
+        counter+=10;
+        setTimeout(runnotate, 10);
     }
 }
