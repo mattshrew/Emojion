@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     width: 400px;
-    height: 400px;
+    height: 100px;
     align-items: center;
 }
 .header {
@@ -15,13 +15,13 @@ body {
 }
 .content {
     position: absolute;
-    height: 219;
-    top: 181;
+    height: 0px;
+    top: 100px;
     width: 100%;
+    overflow: hidden;
 }
 .logo {
     width: 50%;
-    padding: 0 25%;
 }
 .smiley {
     top: 50%;
@@ -34,8 +34,8 @@ body {
     background: yellow;
 }
 .eye1{
-    top: 30px;
-    left: 30px;
+    top: 35px;
+    left: 35px;
     height: 15px;
     width: 15px;
     position: absolute;
@@ -43,8 +43,8 @@ body {
     background: black;
 }
 .eye2{
-    top: 30px;
-    right: 30px;
+    top: 35px;
+    right: 35px;
     height: 15px;
     width: 15px;
     position: absolute;
@@ -71,17 +71,21 @@ body {
 .djkhaled {
     position: absolute;
     width: 45px;
-    height: 1.5px;
+    height: 3px;
     top: 82.5px;
     background: black;
     left: 37.5px;
 }
 #upload-box {
+    position: absolute;
+    top: 0;
+    left: 54%;
     border: 2px dashed #ccc;
-    padding: 20px;
+    padding: 28px 20px;
     text-align: center;
     cursor: pointer;
-    height: 48px;
+    height: 40px;
+    width: 35%;
 }
 #p1{
     position: absolute;
