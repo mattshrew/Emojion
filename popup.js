@@ -76,7 +76,6 @@ function dropDown() {
     clearInterval(id);
     id = setInterval(dropper, 10);
     function dropper() {
-        console.log("matthew needs bing chilling");
         if (top >= 219) {
             clearInterval(id);
         } else {
@@ -92,7 +91,6 @@ function dropUp() {
     clearInterval(id1);
     id1 = setInterval(dropper1, 10);
     function dropper1() {
-        console.log("matthew needs mor bing chilling");
         if (top1 <= 0) {
             clearInterval(id1);
         } else {
