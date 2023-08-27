@@ -3,8 +3,7 @@ var emotion = 0;
 var sentiment = 0;
 var mouth1 = document.getElementById("mouth");
 var mouth2 = document.getElementById("othermouth");
-var body = document.getElementById("body");
-var content = document.getElementById("content");
+var html = document.documentElement;
 var printer = "";
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-input');
   
     uploadBox.addEventListener('click', function () {
-        toggleContent();
         fileInput.click();
     });
   
@@ -73,8 +71,7 @@ async function showTranscript(transcript) {
 }
 
 function toggleContent() {
-    console.log("t");
-    content.classList.toggle("active");
+    html.classList.toggle("active");
 }
 
 

@@ -1,13 +1,32 @@
 * {
     box-sizing: border-box;
+    transition: max-height 1s ease;
+}
+
+html {
+    max-height: 100px;
+}
+
+html.active {
+    max-height: 200px;
 }
 
 body {
     margin: 0;
     padding: 0;
     width: 400px;
-    height: auto;
+    max-height: 100px;
     align-items: center;
+    overflow: hidden;
+}
+
+html.active body {
+    max-height: 200px;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .heading {
@@ -19,7 +38,7 @@ body {
 
 .header {
     width: 50%;
-    height: 100px;
+    height: 100%;
 }
 
 .logo {
@@ -30,45 +49,62 @@ body {
 
 #upload-box {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border: 2px dashed #ccc;
     padding: 28px 20px;
     text-align: center;
     cursor: pointer;
-    height: 75px;
+    height: 75%;
     width: 35%;
 }
 
-#upload-box p {
-    margin-block-start: 0;
-    margin-block-end: 0;
+.download {
+    width: 33%;
 }
+
+#upload-box p {
+    padding: 3px 0 0;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
 
 #upload-box input {
     display: none;
 }
 
 .content {
-    position: absolute;
-    height: 0px;
-    top: 100px;
-    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-height: 0px;
+    padding: 0 25px;
     overflow: hidden;
+    background: #f2f2f2;
 }
 
-.content.active {
-    height: 320px;
+html.active .content {
+    max-height: 100px;
+}
+
+.text {
+    width: 66%;
+    text-align: center;
+}
+
+#p1 {
+    font-size: medium;
 }
 
 .smiley {
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-    left: 20px;
+    margin: 22px 0;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     background: yellow;
+    transform: scale(0.6);
 }
 .eye1{
     top: 35px;
@@ -113,10 +149,4 @@ body {
     background: black;
     left: 37.5px;
 }
-#p1{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: medium;
-    left: 150px;
-}
+
