@@ -117,7 +117,6 @@ function runnotate(){
         counter+=10;
         setTimeout(runnotate, 10);
     } else {
-        console.log("bingchilling");
         setTimeout(toggleContent, 2000);
     }
 }
